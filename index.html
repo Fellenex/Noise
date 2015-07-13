@@ -5,9 +5,24 @@
         <link rel='stylesheet' type='text/css' href='stylesheet.css'/>
     </head>
     <body>
-        <canvas id="noiseCanvas" width="200" height="200">
+        <canvas id="noiseCanvas" width="128" height="128">
             This text is displayed if your browser does not support HTML5 Canvas.
         </canvas>
         <script type='text/javascript' src='machine.js'></script>
+
+        <form name="moreNoise">
+            <input type="button" name="randomNoiseClick" value="Get some new noise!" onClick="cyclicNoise('random')"/>
+            <input type="button" name="centralNoiseClick" value="Get some patterned noise" onClick="cyclicNoise('concentric')"/>
+        </form>
+
+        <br><br><br>
+
+        <form>
+            <input type="text" id="newNoiseWidth" placeholder="Width"/>
+            <br>
+            <input type="text" id="newNoiseHeight" placeholder="Height"/>
+            <br>
+            <input type="button" value="Change Noise Size" onClick="changeSize()"/>
+        </form>
     </body>
 </html>
